@@ -4,11 +4,11 @@ import videos from "./videos.json";
 import VideoList from "./components/VideoList";
 
 function App() {
-  const [video, setvideo]=useState(videos[0]);
+  const [currentVideo, setCurrentVideo]=useState(videos[0]);
   return (
     <main className="flex gap-10 justify-center my-12">
       <section>
-      <VideoPlayer video={video} />
+      <VideoPlayer currentVideo={currentVideo} />
       </section>
       <section className="flex flex-col gap-2">
         {videos.map((video)=>
@@ -16,7 +16,7 @@ function App() {
         <VideoList 
         key={video.title} 
         video={video} 
-        setvideo={setvideo} />
+        setCurrentVideo={setCurrentVideo} />
       ))}
        
         </section>

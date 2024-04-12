@@ -1,10 +1,10 @@
 import React from 'react';
 
-const VideoList = ({video,setVideo}) => {
+const VideoList = ({video,setCurrentVideo}) => {
   return(
   <div
   className='mr-2 flex gap-2 hover:cursor-pointer rounded'
-  onClick={() => setVideo(video)}
+  onClick={() => setCurrentVideo(video)}
 >
   <img
     src={video.thumb}

@@ -1,7 +1,7 @@
 // import React from 'react';
 import { useRef,useState,useEffect } from 'react';
 
-const VideoPlayer = ({video}) => {
+const VideoPlayer = ({currentVideo}) => {
   const videoRef= useRef(null);
   const intervalRef=useRef(null);
   const[isPlaying,setIsPlaying]=useState(false);
@@ -124,7 +124,7 @@ useEffect(() =>
     <div>
       <h1 className='text-xl font-bold flex justify-center my-6 text-gray-600'>React Video Player</h1>
     </div>
-    <video className='w-full aspect-video' src={video.sources} ref={videoRef} onClick={togglePlayPause} onPlay={startProgressLoop} onPause={stopProgressLoop}></video>
+    <video className='w-full aspect-video' src={currentVideo.sources} ref={videoRef} onClick={togglePlayPause} onPlay={startProgressLoop} onPause={stopProgressLoop}></video>
     <div className='flex my-4'>
       <button onClick={togglePlayPause}>  
         {isPlaying? 
@@ -160,7 +160,7 @@ useEffect(() =>
       </button> */}
     </div>
     <div>
-      <p className='texl-base font-bold'>{video.title}</p>
+      <p className='texl-base font-bold'>{currentVideo.title}</p>
     </div>
   </div>
   )
